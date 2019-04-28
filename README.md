@@ -1,5 +1,7 @@
 # vue-theme-toggle-local-storage
 
+[Live Demo](https://lukedavies12.github.io/vue-theme-toggle-local-storage/#/)
+
 ## Project setup
 ```
 npm install
