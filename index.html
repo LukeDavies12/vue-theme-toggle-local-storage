@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/vue-theme-toggle-local-storage/favicon.ico><title>vue-toggle-theme-local-storage</title><link href=/vue-theme-toggle-local-storage/js/about.b50205aa.js rel=prefetch><link href=/vue-theme-toggle-local-storage/css/app.33d01b5c.css rel=preload as=style><link href=/vue-theme-toggle-local-storage/js/app.2bf47ae9.js rel=preload as=script><link href=/vue-theme-toggle-local-storage/js/chunk-vendors.0128fe90.js rel=preload as=script><link href=/vue-theme-toggle-local-storage/css/app.33d01b5c.css rel=stylesheet></head><body><noscript><strong>We're sorry but vue-toggle-theme-local-storage doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=https://unpkg.com/ionicons@4.5.5/dist/ionicons.js></script><script>// Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { 
+          console.log('could not get item')
+        }
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {
+            console.log('could not set item')
+          }
+        }
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();</script><script src=/vue-theme-toggle-local-storage/js/chunk-vendors.0128fe90.js></script><script src=/vue-theme-toggle-local-storage/js/app.2bf47ae9.js></script></body></html>
