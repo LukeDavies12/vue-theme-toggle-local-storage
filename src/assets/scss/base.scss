@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    transition: color, background, ease .3s;
+}
+
+h1,
+h2,
+h3 {
+    transition: color, background, ease .3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar {
+    transition: color, background, ease .3s;
+
+    .nav-right {
+
+        a,
+        button {
+            transition: color, background, ease .3s;
+        }
+    }
+}
+
+button {
+    border: none;
+    transition: color, background, ease .3s;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// button on the home and about pages
+.button-primary {
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}

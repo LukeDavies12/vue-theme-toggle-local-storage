@@ -1,0 +1,70 @@
+// below is basis for colors 
+$light-bg: white;
+$dark-bg: black;
+
+$light-nav: #e8e8e8;
+$dark-nav: #1f1f1f;
+
+$light-header: black;
+$dark-header: white;
+
+$light-text: #444;
+$dark-text: #e8e8e8;
+
+$light-accent: #273c75;
+$dark-accent: #00a8ff;
+
+// Light default theme
+body {
+    background: $light-bg;
+    color: $light-text;
+    h1, h2, h3{
+        color: $light-header;
+    }
+    .navbar{
+        background: $light-nav;
+        a{
+            color: $light-header;
+        }
+        .nav-right, button{
+            color: $light-text;
+        }
+    }
+    .button-primary{
+        background: $light-accent;
+        color: $light-bg;
+        &:hover{
+            background: lighten($light-accent, $amount: 10)
+        }
+        &:active{
+            background: lighten($light-accent, $amount: 20)
+        }
+    }
+}
+// Override variables for Dark theme
+body[data-theme="dark"] {
+    background: $dark-bg;
+    color: $dark-text;
+    h1, h2, h3{
+        color: $dark-header;
+    }
+    .navbar{
+        background: $dark-nav;
+        a{
+            color: $dark-text;
+        }
+        .nav-right, button{
+            color: $dark-text;
+        }
+    }
+    .button-primary{
+        background: $dark-accent;
+        color: $dark-bg;
+        &:hover{
+            background: lighten($dark-accent, $amount: 10)
+        }
+        &:active{
+            background: lighten($dark-accent, $amount: 20)
+        }
+    }
+}
